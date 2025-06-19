@@ -13,18 +13,30 @@
 
   <div class="card">
     <img src="profile.jpg" alt="Photo de profil" class="profile-pic" />
-    <h1>Votre Nom</h1>
-    <div class="subtitle">Développeur créatif et consultant</div>
+    <h1>Rain Lab</h1>
+    <div class="subtitle">Data Analytics Services</div>
     <p>
-      J'aide les entreprises à créer des expériences numériques centrées sur l'humain grâce à la technologie et au design.
+      S bohatými skúsenosťami v práci s dátami pre veľké poisťovacie spoločnosti,
+      ponúkame služby v oblasti dátových analýz a modelovania. Našim klientom pomáhame transformovať
+      dáta na praktické poznatky, ktoré vedú k obchodným úspechom. Chcete nás kontaktovať? Napíšte nám!
     </p>
-    <a class="email-button" href="mailto:mail@gmail.com">
+    <a class="email-button" id="email-link" href="#">
       <svg viewBox="0 0 24 24">
         <path d="M4 4h16v16H4z" fill="none"/>
         <path d="M4 4l8 8 8-8M4 20h16V4H4z"/>
       </svg>
-      Contactez-moi
+      Contact Me
     </a>
+  </div>
+
+  <script>
+    const name = "rainlabanalytics+githubpages1";
+    const provider = "gmail";
+    const extension = 'com'
+    const email = `${name}@${provider}.${extension}`;
+    const link = document.getElementById("email-link");
+    link.href = `mailto:${email}`;
+  </script>
   </div>
 </body>
 </html>
