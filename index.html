@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name</title>
+  <title>Rain Lab</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="lang-switcher">
-    <a href="index.html" class="active">EN</a> | <a href="fr.html">FR</a>
+    <a href="index.html" class="active">EN</a> | <a href="sk.html">FR</a>
   </div>
 
   <div class="card">
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-    <h1>Your Name</h1>
+    <h1>Rain Lab</h1>
     <div class="subtitle">Creative Developer & Consultant</div>
     <p>
-      I help companies build human-centered digital experiences through technology and design.
+      With extensive experience supporting major insurance corporations,
+      we provide tailored data analytics and modeling services.
+      We help clients transform complex data into actionable insights that drive business success.
+      Want to get in touch? Contact us!
     </p>
-    <a class="email-button" href="mailto:mail@gmail.com">
+    <a class="email-button" id="email-link" href="#">
       <svg viewBox="0 0 24 24">
         <path d="M4 4h16v16H4z" fill="none"/>
         <path d="M4 4l8 8 8-8M4 20h16V4H4z"/>
@@ -26,5 +29,15 @@
       Contact Me
     </a>
   </div>
+
+  <script>
+    const name = "rainlabanalytics+githubpages1";
+    const provider = "gmail";
+    const extension = 'com'
+    const email = `${name}@${provider}.${extension}`;
+    const link = document.getElementById("email-link");
+    link.href = `mailto:${email}`;
+  </script>
+
 </body>
 </html>
