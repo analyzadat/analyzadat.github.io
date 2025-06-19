@@ -1,6 +1,6 @@
 async function setLang(lang) {
   try {
-    const response = await fetch(`translations/${lang}.json`);
+    const response = await fetch(`./translations/${lang}.json`);
     const data = await response.json();
 
     document.getElementById("subtitle").textContent = data.subtitle;
