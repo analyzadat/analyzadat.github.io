@@ -48,7 +48,15 @@ html, body {
   width: 100%;
   max-width: 500px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.bio-text {
   text-align: left;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  color: #555;
+  line-height: 1.6;
 }
 
 .profile-pic {
