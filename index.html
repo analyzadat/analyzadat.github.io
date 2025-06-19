@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name</title>
   <style>
-    /* Reset & base styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body, html {
       height: 100%;
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #0f0f1a);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* More blue gradient */
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -30,6 +30,15 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       text-align: center;
       backdrop-filter: blur(8px);
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid rgba(255, 255, 255, 0.3);
     }
 
     h1 {
@@ -63,6 +72,7 @@
 </head>
 <body>
   <div class="card">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
     <h1>Your Name</h1>
     <p>
       A short bio about who you are, what you do, or anything else you’d like people to know.
