@@ -11,21 +11,29 @@
       padding: 0;
     }
 
-    body, html {
+    html, body {
       height: 100%;
+    }
+
+    body {
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* More blue gradient */
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* unified blue gradient */
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 2rem;
     }
 
     .card {
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       padding: 2rem;
-      width: 90%;
+      width: 100%;
       max-width: 500px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       text-align: center;
