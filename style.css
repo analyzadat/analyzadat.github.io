@@ -52,7 +52,7 @@ html, body {
 }
 
 .bio-text {
-  text-align: left;
+  text-align: justify;
   max-width: 400px;
   margin: 0 auto 2rem;
   color: #555;
