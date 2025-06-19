@@ -57,6 +57,7 @@ html, body {
   margin: 0 auto 2rem;
   color: #555;
   line-height: 1.6;
+  word-spacing: 0.02em;
 }
 
 .profile-pic {
