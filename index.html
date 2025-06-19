@@ -13,31 +13,45 @@
 
     html, body {
       height: 100%;
-    }
-
-    body {
+      background-color: #f4f4f4;
       font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* unified blue gradient */
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: #ffffff;
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem;
+      position: relative;
+    }
+
+    .lang-switcher {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-switcher img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      transition: border 0.2s;
+    }
+
+    .lang-switcher img:hover {
+      border-color: #999;
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: #fff;
       border-radius: 16px;
       padding: 2rem;
       width: 100%;
       max-width: 500px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       text-align: center;
-      backdrop-filter: blur(8px);
     }
 
     .profile-pic {
@@ -46,46 +60,99 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1.5rem;
-      border: 3px solid rgba(255, 255, 255, 0.3);
+      border: 2px solid #ccc;
     }
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 1.5rem;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      color: #555;
     }
 
     .email-button {
-      background: #00bcd4;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #333;
+      border-radius: 999px;
       text-decoration: none;
-      display: inline-block;
+      color: #333;
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
     }
 
     .email-button:hover {
-      background: #0198a6;
+      background: #333;
+      color: #fff;
+    }
+
+    .email-button svg {
+      margin-right: 0.5rem;
+      width: 1em;
+      height: 1em;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
     }
   </style>
 </head>
 <body>
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <img src="https://flagcdn.com/w20/gb.png" alt="English" onclick="setLang('en')" title="English">
+    <img src="https://flagcdn.com/w20/fr.png" alt="French" onclick="setLang('sk')" title="Slovensky">
+  </div>
+
   <div class="card">
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-    <h1>Your Name</h1>
-    <p>
-      A short bio about who you are, what you do, or anything else you’d like people to know.
-    </p>
-    <a class="email-button" href="mailto:mail@gmail.com">📧 Contact Me</a>
+    <h1>Rain Lab</h1>
+    <div class="subtitle" id="subtitle">Loading...</div>
+    <p id="bio">Loading...</p>
+    <a class="email-button" id="email-button" href="mailto:mail@gmail.com">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z" fill="none"/>
+        <path d="M4 4l8 8 8-8M4 20h16V4H4z"/>
+      </svg>
+      Contact Us
+    </a>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        subtitle: "Creative Developer & Consultant",
+        bio: "I help companies build human-centered digital experiences through technology and design.",
+        button: "Contact Me"
+      },
+      fr: {
+        subtitle: "Développeur créatif et consultant",
+        bio: "J'aide les entreprises à créer des expériences numériques centrées sur l'humain grâce à la technologie et au design.",
+        button: "Contactez-moi"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("bio").textContent = t.bio;
+      document.getElementById("email-button").lastChild.textContent = ' ' + t.button;
+    }
+
+    // Default language
+    setLang('en');
+  </script>
 </body>
 </html>
